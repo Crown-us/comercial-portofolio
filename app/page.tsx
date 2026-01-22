@@ -1,5 +1,5 @@
 import { siteConfig } from "@/data/config";
-import { ArrowUpRight, Sparkles, Mail, Linkedin, Trophy, Calendar } from "lucide-react";
+import { ArrowUpRight, Sparkles, Mail, Linkedin, Trophy, Calendar, Download } from "lucide-react";
 
 export default function Home() {
   return (
@@ -22,6 +22,20 @@ export default function Home() {
         <p className="text-zinc-600 dark:text-zinc-400 text-lg md:text-xl leading-relaxed max-w-2xl">
           {siteConfig.profile.bio}
         </p>
+
+        {/* --- TOMBOL DOWNLOAD CV (BARU) --- */}
+        <div className="pt-2">
+            <a 
+              href="/resume.pdf" // Pastikan file resume.pdf ada di folder public
+              target="_blank"
+              // Tambahkan rel="noopener noreferrer" untuk keamanan saat target="_blank"
+              rel="noopener noreferrer" 
+              className="inline-flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full font-bold hover:opacity-90 transition-opacity shadow-lg hover:shadow-xl hover:-translate-y-1 transform duration-200"
+            >
+              <Download size={18} />
+              Download CV
+            </a>
+        </div>
       </section>
 
       {/* ==================== 2. ABOUT SECTION (ID: #about) ==================== */}
