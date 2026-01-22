@@ -119,6 +119,7 @@ export default function Home() {
          </div>
 
          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Project 1 */}
             <div className="group rounded-3xl bg-card border border-card-border overflow-hidden hover:border-orange-500/30 transition-all shadow-sm">
                 <div className="h-48 bg-zinc-100 dark:bg-zinc-800 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
@@ -130,13 +131,20 @@ export default function Home() {
                             <h4 className="text-xl font-bold text-foreground mb-1">E-Commerce Dashboard</h4>
                             <p className="text-zinc-500 text-sm">Fullstack admin panel with analytics.</p>
                         </div>
-                        <a href="#" className="p-2 bg-background rounded-full text-foreground hover:bg-orange-500 hover:text-white transition-colors border border-card-border">
+                        {/* FIX: Link project dikasih target="_blank" */}
+                        <a 
+                          href="https://github.com" // <--- GANTI LINK INI DENGAN LINK PROJECT ASLIMU
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 bg-background rounded-full text-foreground hover:bg-orange-500 hover:text-white transition-colors border border-card-border"
+                        >
                             <ArrowUpRight size={18} />
                         </a>
                     </div>
                 </div>
             </div>
 
+            {/* Project 2 */}
             <div className="group rounded-3xl bg-card border border-card-border overflow-hidden hover:border-orange-500/30 transition-all shadow-sm">
                 <div className="h-48 bg-zinc-100 dark:bg-zinc-800 relative overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
@@ -148,7 +156,13 @@ export default function Home() {
                             <h4 className="text-xl font-bold text-foreground mb-1">AI Chatbot Interface</h4>
                             <p className="text-zinc-500 text-sm">Modern chat UI with OpenAI integration.</p>
                         </div>
-                        <a href="#" className="p-2 bg-background rounded-full text-foreground hover:bg-orange-500 hover:text-white transition-colors border border-card-border">
+                        {/* FIX: Link project dikasih target="_blank" */}
+                        <a 
+                          href="https://dribbble.com" // <--- GANTI LINK INI JUGA
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="p-2 bg-background rounded-full text-foreground hover:bg-orange-500 hover:text-white transition-colors border border-card-border"
+                        >
                             <ArrowUpRight size={18} />
                         </a>
                     </div>
