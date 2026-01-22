@@ -109,7 +109,7 @@ export const siteConfig = {
 
   // --- 6. SOCIAL LINKS ---
   socials: [
-    { label: "GitHub", icon: Github, href: "https://github.com", color: "hover:text-white" },
+    { label: "GitHub", icon: Github, href: "https://github.com/Crown-us", color: "hover:text-white" },
     { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com", color: "hover:text-blue-500" },
     { label: "Twitter", icon: Twitter, href: "https://twitter.com", color: "hover:text-sky-400" },
   ]

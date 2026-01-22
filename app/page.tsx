@@ -7,12 +7,10 @@ export default function Home() {
       
       {/* ==================== 1. HERO SECTION (ID: #home) ==================== */}
       <section id="home" className="space-y-6 pt-12">
-        {/* FIX: text-white diganti text-foreground biar jadi hitam saat light mode */}
         <h1 className="text-4xl md:text-6xl font-extrabold text-foreground tracking-tight leading-tight">
           Hi, I'm {siteConfig.profile.name} <span className="animate-wave inline-block">👋</span>
         </h1>
         
-        {/* FIX: Background pill disesuaikan */}
         <div className="flex items-center gap-3 text-sm text-zinc-600 dark:text-zinc-400 bg-card border border-card-border w-fit px-4 py-2 rounded-full shadow-sm">
              <span className="relative flex h-2 w-2">
                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -21,7 +19,6 @@ export default function Home() {
              Based in {siteConfig.profile.location}
         </div>
         
-        {/* FIX: Teks deskripsi jadi abu gelap di light mode, abu terang di dark mode */}
         <p className="text-zinc-600 dark:text-zinc-400 text-lg md:text-xl leading-relaxed max-w-2xl">
           {siteConfig.profile.bio}
         </p>
@@ -29,10 +26,8 @@ export default function Home() {
 
       {/* ==================== 2. ABOUT SECTION (ID: #about) ==================== */}
       <section id="about">
-         {/* FIX: bg-zinc-900 diganti bg-card (Putih di Light, Hitam di Dark) */}
          <div className="bg-card border border-card-border p-8 rounded-3xl relative overflow-hidden group shadow-sm">
             
-            {/* Background Glow Effect (Hanya muncul di Dark Mode biar Light Mode bersih) */}
             <div className="hidden dark:block absolute top-0 right-0 w-64 h-64 bg-orange-500/10 blur-[100px] rounded-full pointer-events-none"></div>
             
             <h3 className="text-2xl font-bold text-foreground mb-6 relative z-10">About Me</h3>
@@ -48,7 +43,6 @@ export default function Home() {
                 </div>
                 {/* Stats */}
                 <div className="flex gap-4 w-full md:w-auto">
-                    {/* FIX: Card Stats ikut tema */}
                     <div className="bg-background p-4 rounded-2xl border border-card-border text-center flex-1 md:w-32 shadow-sm">
                         <span className="block text-3xl font-bold text-foreground">2+</span>
                         <span className="text-xs text-zinc-500 uppercase tracking-wider">Years Exp</span>
@@ -71,16 +65,13 @@ export default function Home() {
         
         <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-4">
             {siteConfig.skills.map((skill, idx) => (
-                // FIX: Card Skill ikut tema
                 <div key={idx} className="group flex flex-col items-center gap-3 p-3 rounded-2xl bg-card border border-card-border hover:border-orange-500/30 transition-all hover:-translate-y-1 shadow-sm">
                     <div className="relative w-14 h-14 rounded-full flex items-center justify-center bg-background border border-card-border group-hover:border-orange-500/30 transition-colors overflow-hidden">
-                        {/* Glow effect tetap ada tapi halus */}
                         <div className={`absolute inset-0 opacity-20 bg-gradient-to-br ${skill.color} blur-md group-hover:opacity-40 transition-all`}></div>
                         
                         <img 
                           src={skill.icon} 
                           alt={skill.name} 
-                          // FIX: Logo Next.js di-invert hanya saat Dark Mode
                           className={`relative z-10 w-8 h-8 object-contain drop-shadow-sm group-hover:scale-110 transition-transform ${skill.name === "Next.js" ? "dark:invert" : ""}`}
                         />
                     </div>
@@ -101,7 +92,6 @@ export default function Home() {
 
          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {siteConfig.achievements.map((item, idx) => (
-               // FIX: Card Achievement pakai variable
                <div key={idx} className="group p-6 rounded-3xl bg-card border border-card-border hover:border-orange-500/30 transition-all shadow-sm">
                   <div className="flex justify-between items-start mb-4">
                       <div className="p-3 bg-yellow-500/10 rounded-xl text-yellow-600 dark:text-yellow-500 border border-yellow-500/20 group-hover:scale-110 transition-transform">
@@ -175,11 +165,24 @@ export default function Home() {
           </p>
           
           <div className="flex justify-center gap-4">
-              <a href="mailto:emailmu@gmail.com" className="flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full font-bold hover:opacity-90 transition-opacity">
+              {/* FIX: Ganti mailto: dengan Link Gmail Compose langsung */}
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=wijaya.kevinn@gmail.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-foreground text-background px-6 py-3 rounded-full font-bold hover:opacity-90 transition-opacity"
+              >
                   <Mail size={18} />
                   Send Email
               </a>
-              <a href="https://linkedin.com" target="_blank" className="flex items-center gap-2 bg-card text-foreground border border-card-border px-6 py-3 rounded-full font-medium hover:border-orange-500/50 transition-colors">
+
+              {/* Tombol LinkedIn (Tetap sama) */}
+              <a 
+                href="https://www.linkedin.com/in/kevin-dwi-wijaya-95aa812b4" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-card text-foreground border border-card-border px-6 py-3 rounded-full font-medium hover:border-orange-500/50 transition-colors"
+              >
                   <Linkedin size={18} />
                   LinkedIn
               </a>
